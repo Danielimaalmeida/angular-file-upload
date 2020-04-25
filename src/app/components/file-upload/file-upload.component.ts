@@ -73,36 +73,4 @@ export class FileUploadComponent {
     const toKByte = size / 1024;
     return toKByte >= 5 && toKByte <= 5120;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-  private validateFile2(file): Observable<IUploadedFile> {
-    const fileReader = new FileReader();
-    const image = new Image();
-    return new Observable((observer: Observer<IUploadedFile>) => {
-      fileReader.readAsDataURL(file);
-      fileReader.onload = event => {
-        image.onload = () => {
-          observer.next({ file });
-          observer.complete();
-        };
-        image.onerror = () => {
-          observer.error({ file, error: null });
-        };
-        image.src = fileReader.result as string;
-      };
-      fileReader.onerror = () => {
-        observer.error({ file, error: null });
-      };
-    });
-  }
 }
