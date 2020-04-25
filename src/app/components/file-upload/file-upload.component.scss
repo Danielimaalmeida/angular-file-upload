@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+}
+
+.upload-button {
+  margin: auto;
+  border: 2px solid #333333;
+  background-color: white;
+  min-width: 120px;
+  min-height: 42px;
+  font-weight: bold;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: #333333;
+    color: white;
+    cursor: pointer;
+  }
+
+}

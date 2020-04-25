@@ -1,3 +1,4 @@
+import { IUploadedFile } from './models/i.uploadfile.model';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'file-upload-app';
+  uploadedFiles: Array<IUploadedFile> = []
+
+  handleUploadedFiles(file: IUploadedFile): void {
+    this.uploadedFiles.push(file);
+  }
 }

@@ -1,0 +1,8 @@
+<div class="container">
+  <button class="upload-button" (click)="fileInput.click()">UPLOAD</button>
+  <input hidden
+         type="file"
+         multiple
+         #fileInput
+         (change)="uploadFiles($event)">
+</div>
